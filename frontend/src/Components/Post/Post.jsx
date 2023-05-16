@@ -122,6 +122,7 @@ const Post = ({
       </div>
 
       <button
+      data-testid="counter"
         style={{
           border: "none",
           backgroundColor: "white",
@@ -135,11 +136,11 @@ const Post = ({
       </button>
 
       <div className="postFooter">
-        <Button onClick={handleLike}>
+        <Button data-testid="incrementLike" onClick={handleLike}>
           {liked ? <Favorite style={{ color: "red" }} /> : <FavoriteBorder />}
         </Button>
 
-        <Button onClick={() => setCommentToggle(!commentToggle)}>
+        <Button data-testid="increment" onClick={() => setCommentToggle(!commentToggle)}>
           <ChatBubbleOutline />
         </Button>
 

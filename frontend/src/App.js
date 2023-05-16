@@ -16,6 +16,7 @@ import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import Search from "./Components/Search/Search";
 import NotFound from "./Components/NotFound/NotFound";
+import { CreatePost, Celestie } from './pages';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,8 @@ function App() {
   const { isAuthenticated } = useSelector((state) => state.user);
 
   return (
+
+    // <h1>hello world</h1>
     <Router>
       {isAuthenticated && <Header />}
 
@@ -34,6 +37,16 @@ function App() {
         <Route
           path="/account"
           element={isAuthenticated ? <Account /> : <Login />}
+        />
+
+        <Route
+          path="/celestie"
+          element={isAuthenticated ? <Celestie/> : <Login />}
+        />
+
+        <Route
+          path="/celestie/create_post"
+          element={isAuthenticated ? <CreatePost/> : <Login />}
         />
 
         <Route
